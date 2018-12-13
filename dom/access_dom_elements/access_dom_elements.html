@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<!--
+  Nessa parte do tutorial iremos falar de alguns metódos que podem 
+  ser utilizados no document, sendo eles o getElementById, getElementByClassName,
+  getElementByTagName, querySelector e querySelectorAll.
+-->
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Accessing Elements in the DOM</title>
+
+  <style>
+    html { font-family: sans-serif; color: #333; }
+    body { max-width: 500px; margin: 0 auto; padding: 0 15px; }
+    div, article { padding: 10px; margin: 5px; border: 1px solid #dedede; }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>Accessing Elements in the DOM</h1>
+
+  <h2>ID (#demo)</h2>
+  <div id="demo">Access me by ID</div> 
+
+<!-- 
+  const demoId = document.getElementById('demo'); 
+
+  Para um elemento ser acessado através do id, na DOM, precisamos
+  que o id seja sempre único na página, se não esse id não será
+  acessável com o metódo. Esse metódo permite que apenas
+  acessemos um id por vez.
+-->
+
+  <h2>Class (.demo)</h2>
+  <div class="demo">Access me by class (1)</div>
+  <div class="demo">Access me by class (2)</div>
+
+<!--
+  const demoClass = document.getElementsByClassName('demo');
+
+  Obtemos um objeto array-like com este metódo, isso quer dizer
+  que não podemos mudar uma propriedade, como a borda, diretamente, como
+  fizemos com um elemento pego pelo id.
+
+  Para isso, precisamos acessar o elemento da array com um número:
+  demoClass[0].style.border = '1px solid orange';
+
+  Mas normalmente, quando usamos este metódo podemos querer aplicar
+  as mudanças em todos os elementos, então podemos fazer um loop:
+  for (i = 0; i < demoClass.length; i++) {
+    demoClass[i].style.border = '1px solid orange';
+  }
+-->
+
+  <h2>Tag (article)</h2>
+  <article>Access me by tag (1)</article>
+  <article>Access me by tag (2)</article>
+
+<!--
+  const demoTag = document.getElementsByTagName('article');
+
+  Quando acessamos pela classe, obtemos uma array com vários
+  elementos. O mesmo acontece com o ByTagName, então podemos
+  aplicar a mesma técnica do loop.
+
+  for (i = 0; i < demoTag.length; i++) {
+    demoTag[i].style.border = '1px solid blue';
+  }
+
+-->
+
+  <h2>Query Selector</h2>
+  <div id="demo-query">Access me by query</div>
+
+<!--
+  Podemos acessar elementos da DOM com CSS Selectors, como em
+  jQuery. com o javascript, fazemos isso com document.querySelector().
+
+  const demoQuery = document.querySelector('#demo-query');
+  Aqui, pegamos pelo ID o elemento que possua id=demo-query.
+-->
+
+  <h2>Query Selector All</h2>
+  <div class="demo-query-all">Access me by query all (1)</div>
+  <div class="demo-query-all">Access me by query all (2)</div>
+
+<!--
+  Neste caso, podemos utilizar o querySelectorAll() para obter
+  todos os elementos que possuam uma query específica.
+
+  const demoQueryAll = document.querySelectorAll('.demo-query-all');
+
+  Então, com um loop forEach, podemos pegar todos os elemenos
+  com essa query e modificá-los na DOM.
+
+  É importante ressaltar que virgulas no querySelector equivalem a 
+  um OU, por exemplo, querySelector('article, div') irá pegar
+  qualquer elemento que possua tag = article ou div.
+  Com o querySelectorAll, vírgulas equivalem ao E, ou seja,
+  querySelectorAll('div, article') obterá os elementos que possuam
+  as duas tags.
+
+    demoQueryAll.forEach(query => {
+      query.style.border = '1px solid green';
+    });
+-->
+  <script src="access.js"></script>
+
+</body>
+
+</html>
+

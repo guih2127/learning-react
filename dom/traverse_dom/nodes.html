@@ -1,0 +1,82 @@
+<!--
+  Agora, vamos aprender como navegador na DOM, com parents,
+  child e propriedades irmãs. Entender como navegar na DOM
+  e mover de branch para branch. Neste exemplo de site, temos um HTML
+  com alguns elementos, CSS básico e algumas variáveis criadas
+  no script para fácil acesso de alguns elementos.
+-->
+
+<!--
+  ROOT NODES
+  O objeto document é a raiz de cada node na DOM. Esse objeto é 
+  na verdade uma propriedade do objeto window, que é o global e de
+  maior nível objeto que representa a aba do navegador. O document 
+  contém sempre 3 elementos raíz, mesmo que seja um HTML em branco, eles
+  são: HTML, HEAD e BODY. Por serem tão comuns, eles tem suas propriedades
+  únicas no document.
+-->
+
+<!--
+  Os nodes na DOM podem ser parents, children ou siblings, dependendo
+  de sua relação com outros nodes. O PARENT é o node um nivel acima do
+  elemento, ou mais perto do document na hierarquia. Podemos obter o parent
+  com parentNode e parentElement. Para obter mais níveis acima do que só o
+  primeiro nível, podemos utilizar parentNode.parentNode e assim por diante.
+-->
+
+<!--
+  Os CHILDREN de um node são os elementos um nível abaixo do elemento,
+  nodes que estão mais níveis abaixo são considerados descendants.
+  Ao pegar os children do elemento <ul>, obtemos além dos três <li>, outros
+  quatro nodes. Isso acontece porque escrevemos nosso próprio HTML, e a identação
+  dos elementos é contada pela DOM como text node. Se tentassemos mudar a borda
+  do firstChild, por exemplo, não conseguiriamos, por ser um text node.
+  Para isso, existem os metódos firstElementChild e lastElementChild.
+
+  ul.firstElementChild.style = 'border: solid 5px black'
+
+  Podemos utilizar também um for para iterar todos os children de um elemento:
+  for (let element of ul.children) {
+    element.style.background = 'yellow';
+  }
+
+  Utilizando parents e children nodes, é possível obter qualquer elemento na DOM.
+-->
+
+<!--
+  Os siblings de um node são qualquer node no mesmo nível na DOM. Os siblings
+  não tem que ser do mesmo tipo para serem considerados siblings obviamente.
+  Podemos obtê-los com previousSibling, nextSibling, previousElementSibling e
+  nextElementSibling. 
+-->
+
+<html>
+
+<head>
+  <title>Learning About Nodes</title>
+
+  <style>
+    * { border: 2px solid #dedede; padding: 15px; margin: 15px; }
+    html { margin: 0; padding: 0; }
+    body { max-width: 600px; font-family: sans-serif; color: #333; }
+  </style>
+</head>
+
+<body>
+  <h1>Shark World</h1>
+  <p>The world's leading source on <strong>shark</strong> related information.</p>
+  <h2>Types of Sharks</h2>
+  <ul>
+    <li>Hammerhead</li>
+    <li>Tiger</li>
+    <li>Great White</li>
+  </ul>
+</body>
+
+<script>
+  const h1 = document.getElementsByTagName('h1')[0];
+  const p = document.getElementsByTagName('p')[0];
+  const ul = document.getElementsByTagName('ul')[0];
+</script>
+
+</html>

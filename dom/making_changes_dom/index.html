@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Learning the DOM</title>
+  </head>
+
+  <body>
+    <h1>Document Object Model</h1>
+  </body>
+
+</html>
+
+<!--
+	Já entendemos como navegador na DOM e obter os nodes que
+	precisamos. O próximo passo é aprender como adicionar, trocar
+	e remover nodes. Uma aplicação to-do é um exemplo prático 
+	de um programa Javascript onde você possivelmente precisaria
+	criar, modificar e remover elementos da DOM.
+-->
+
+<!--
+	CRIANDO NOVOS NODES
+	Em um site estático, elementos novos são adicionados na página
+	escrevendo diretamente HTML em um arquivo .html. Em uma aplicação
+	web dinâmica, elementos e texto são adicionados com javascript.
+	createElement() e createTextNode() são metódos utilizados para criar
+	nodes novos.
+
+	Podemos criar um novo elemento <p> assim:
+	const paragraph = document.createElement('p');
+
+	E então adicionamos nesse paragráfo um texto:
+	paragraph.textContent = "I'm a brand new paragraph.";
+
+-->
+
+<!--
+	Porém, para ver os nodes que criamos, no front end, precisamos
+	inserí-los no document, os metódos appendChild e insertBefore são
+	utilizaos para inserir itens no início, meio ou fim de um elemento parent.
+	replaceChild é utilizado para substituir um velho node por um novo.
+
+	const todoList = document.querySelector('ul');
+	const newTodo = document.createElement('li');
+	newTodo.textContent = 'Do homework';
+
+	todoList.appendChild(newTodo);
+
+	Poderíamos também inserir esse <li> no topo da lista, com:
+	todoList.insertBefore(anotherTodo, todoList.firstElementChild);
+
+	insertBefore leva dois argumentos: O primeiro é	o primeiro é
+	aonde queremos inserir o child, o segundo é o elemento child
+	no qual queremos colocar o elemento antes dele.
+
+	Para editar um elemento, podemos fazer:
+	todoList.replaceChild(modifiedTodo, todoList.children[2]);
+
+	Que também leva dois argumentos, o primeiro é o novo node,
+	e o segundo é o velho, que será substituído.
+
+	Com a combinação destes 3 metódos, podemos inserir nodes aonde
+	quisermos no DOM.
+-->
+
+<!--
+	Por último, podemos deletar nodes também. node.Remove e node.removeChild
+	são os metódos utilizados pra isso.
+
+	todoList.removeChild(todoList.lastElementChild);
+
+	Ou então remover diretamente, utilizando:
+	todoList.children[1].remove();
+-->
+<ul>
+  <li>Buy groceries</li>
+  <li>Feed the cat</li>
+  <li>Do laundry</li>
+</ul>

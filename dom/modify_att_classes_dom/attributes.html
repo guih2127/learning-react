@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+    <img src="https://js-tutorials.nyc3.digitaloceanspaces.com/shark.png">
+    <div id="demo-id">Demo ID</div>
+
+
+</body>
+
+</html>
+
+<!--
+	Aprendemos na última aula, como criar, inserir, substituir e deletar
+	elementos da DOM, com os metódos disponíveis.
+	Agora, veremos como alterar a DOM modificando estilos, classes e outros
+	atributos dos nodes.
+-->
+<!--
+	document.querySelector e getElementById são os metódos utilizados para
+	acessar um único elemento, sendo o querySelector um pouco mais robusto.
+
+	const demoId = document.querySelector('#demo-id');
+-->
+
+<div class="demo-class">Demo Class 1</div>
+<div class="demo-class">Demo Class 2</div>
+
+<!--
+	const demoClasses = document.querySelectorAll('.demo-class');
+
+	demoClasses.forEach(element => {
+	  element.textContent = 'All demo classes updated.';
+	});
+-->
+
+<!--
+	Atributos são valores que contém informacões adicionais sobre elementos
+	HTML, com o src de uma img tag, o href de um a tag, ou class, id e style.
+	Podemos verificar a existência, obter um atributo, setar um atributo e remover
+	um atributo com as funções hasAttribute(), getAttribute(), setAttribute() e
+	removeAttribute()
+-->
