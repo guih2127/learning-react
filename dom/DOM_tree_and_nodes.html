@@ -1,0 +1,40 @@
+<html lang="en">
+
+  <head>
+    <title>Learning the DOM</title>
+  </head>
+
+  <body>
+    <a id="nav" href="index.html">Home</a>
+    <h1>Document Object Model</h1>
+  </body>
+
+</html>
+
+<!--
+    Utilizando o mesmo HTML da aula anterior, adicionamos
+    nav, com id=nav, e manipulamos ele pelo DOM, obtendo
+    ele a partir do document.getElementById, do Javascript.
+    Trocamos seu href, seu text, etc.
+-->
+<!--
+    Todos os elementos do DOM são nomeados NODES, existem
+    vários tipos de nodes, os principais sendo Element, Text e
+    Comment nodes.
+    Qualquer elemento HTML é um Element node, qualquer texto
+    FORA de um elemento é um Text node e qualquer comentário
+    HTML é um Comment node. O document, por si só, é um Document
+    Node, considerado a raíz dos outros nodes. Podemos obter
+    o tipo de node de um elemento com .nodeType
+-->
+    <h1>An element node</h1>
+    <!-- a comment node -->
+    A text node.
+    <button id="changeBackground">Change Background Color</button>
+    <script src="js/script.js"></script>
+<!--
+    Um evento em Javascript é uma ação que o usuário executa, seja
+    ela clicar em um elemento, etc. Neste caso, queremos um botão
+    que execute uma ação quando o usuário clicá-lo. Podemos fazer
+    isso adicionando um EventListener em nosso botão.
+-->

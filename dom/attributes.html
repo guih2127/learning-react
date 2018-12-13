@@ -39,5 +39,34 @@
 	HTML, com o src de uma img tag, o href de um a tag, ou class, id e style.
 	Podemos verificar a existência, obter um atributo, setar um atributo e remover
 	um atributo com as funções hasAttribute(), getAttribute(), setAttribute() e
-	removeAttribute()
+	removeAttribute(). podemos por exemplo, mudar o href de uma imagem, etc.
+-->
+
+<!--
+	Modificando classes:
+	O atributo classe corresponde ao css selector classe, e não devemos confundi-los
+	com as classes do es6. classes css podem ser utilizadas para aplicar style a vários
+	elementos, diferente de ids. possuimos os atributos className e classList para 
+	trabalhar com o atributo classe, em javascript.
+	Possuimos os metódos className, classList.add, classList.toggle, classList.contains,
+	classList.replace, classList.remove.
+-->
+
+<!--
+	Modificando styles:
+	Já editamos styles anteriormente, mas podemos querer adicionar ou editar um style
+	diretamente.
+-->
+    <div id="style" style="height: 100px;
+                width: 100px;
+                border: 2px solid black;">Div</div>
+<!--
+	const div = document.querySelector('div');
+	div.setAttribute('style', 'text-align: center');
+
+	Pra deixar mais bonitinho:
+		div.style.borderRadius = '50%';
+		div.style.display = 'flex';
+		div.style.justifyContent = 'center';
+		div.style.alignItems = 'center';
 -->
