@@ -6,6 +6,7 @@ const TableBodyFunction = props => {
             <tr key={index}>
                 <td>{row.name}</td>
                 <td>{row.job}</td>
+                <td><button onClick={() => props.removeCharacter(index)}>Delete</button></td>
             </tr>
         );
     });
@@ -24,3 +25,8 @@ export default TableBodyFunction;
 // OBS: É importante usar keys quando criarmos listas no react, já que ajuda a identificar cada item dela.
 // Props são um bom modo de passar dados existentes para um componente, porém, o componente não pode mudar o props,
 // eles são read-only.
+
+/*
+	É aqui que o index que definimos em removeCharacter aparece, no componente tableBodyFunction, iremos passar a key como
+	parametro para essa função, visando filtrar qual character queremos remover.
+*/
