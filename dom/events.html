@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>Events</title>
+</head>
+
+<body>
+<!--
+    Até então, conseguimos manipular praticamente qualquer
+    elemento no DOM e fazer qualquer mudança que quisermos. Porém,
+    da perspectiva do usuário, isso não ajuda muito, pois as mudanças
+    que fizemos foram apenas feitas manualmente.
+
+    Com EVENTOS, entenderemos como tudo se junta para criarmos websites
+    mais interativos. Eventos são ações que acontecem no browser que podem
+    ser iniciados tanto pelo browser quanto pelo usuário em si. Abaixo uma lista
+    de alguns eventos comuns:
+        - Página termina o loading, usuário clica num botão, usuário da um hover
+        no dropdown, usuário envia um formulário, usuário aperta uma tecla.
+-->
+
+<!--
+    EVENT HANDLERS E EVENT LISTENERS
+    Event Handler é uma função js chamada quando um evento é disparado, e 
+    Evend Listener anexa uma interface responsiva a um elemento, que permite
+    que este particular elemento espere e "ouça" que o determinado elemento aconteça.
+    Há três modos de atribuir eventos à elementos: inline event handlers, event handler properties
+    e event listeners.
+-->
+<!--
+    INLINE EVENT HANDLERS
+    Vamos primeiro usar um exemplo básico, com um botão à mudar um paragráfo:
+-->
+
+  <button>Click me</button>
+  <p>Try to change me.</p>
+
+<!--
+    Esse é um inline event handler, que chama a função changeText.
+    Eles são bons para começarmos a entender os eventos, mas não
+    são a melhor forma de aplicá-los. Assim como styles, é mais prático
+    manter o javascript inteiro em um outro arquivo, do que adicionar
+    handlers em todos os elementos.
+-->
+
+<!--
+    EVENT HANDLER PROPERTIES
+    Funciona de forma similar ao event handler, exceto que definiremos a 
+    propriedade do elemento no arquivo js invés de colocarmos na linha do html.
+    O problema é que com eles ainda temos alguns problemas, por exemplo, não podemos
+    colocar vários eventos no onclick, pois um sobrescreve o outro.
+-->
+
+<!--
+    EVENT LISTENERS
+    A última adição no javascript são event listeners, um event listener procura
+    por um evento no elemento. Invés de atribuir o evento diretamente ao elemento, 
+    utilizamos addEventListener() para o evento.
+    O bom de usarmos event listeners é que podemos atribuir vários eventListeners
+    para um mesmo elemento. EventListeners são a melhor forma para manipular eventos
+    no javascript.
+-->
+
+<!--
+    EVENT OBJECTS
+    Eventos podem ter propriedades e metódos que eles podem acessar, por exemplo,
+    o evento do tipo keyDown, disparado quando o usuário aperta qualquer tecla,
+    possui proriedades, tais como event.keyCode, event.key e event.code
+
+-->
+
+    <span></span>
+
+<!--
+    Nesse caso, por exemplo, fazemos uma condicional, e se o key.code for = a, 
+    por exemplo, mudamos o text.content do elemento span para 'Left'.
+-->
+
+<!--
+    Um dos mais usados é a propriedade target, ao clicarmos em qualquer
+    um dos elementos, vamos obter as informações específicas no console
+    utilizando event.target. Isso é bem útil, e permite colocar apenas 
+    um event listener que pode ser utilizado para acessar vários elementos alinhados.
+-->
+
+  <section>
+    <div id="one">One</div>
+    <div id="two">Two</div>
+    <div id="three">Three</div>
+  </section>
+</body>
+
+<script src="events.js"></script>
+
+</html>
+
