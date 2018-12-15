@@ -4,7 +4,8 @@ import TableHeaderFunction from './TableHeaderFunction'
 
 class TableFunction extends Component {
     render() {
-    	const { characterData, removeCharacter } = this.props; // Obtemos o props passado para o componente no App.js
+		const { characterData, removeCharacter } = this.props
+		// Obtemos o props passado para o componente no App.js
 
         return (
 	        	<div>

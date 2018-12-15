@@ -1,8 +1,18 @@
 import React, {Component} from 'react';
 import TableClass from './TableClass';
 import TableFunction from './TableFunction';
+import Form from './Form';
 
 class App extends Component {
+
+    handleSubmit = character => {
+        this.setState({characters: [...this.state.characters, character]});
+    }
+
+    /*
+        Criamos a função handleSubmit, que atualizará o estado de characters
+        adicionando um novo character, utilizando o spread (...).
+    */
 
     removeCharacter = index => {
         const { characters } = this.state;
@@ -23,24 +33,8 @@ class App extends Component {
     */
 
     state = {
-        characters: [
-            {
-                'name': 'Charlie',
-                'job': 'Janitor'
-            },
-            {
-                'name': 'Mac',
-                'job': 'Bouncer'
-            },
-            {
-                'name': 'Dee',
-                'job': 'Aspring actress'
-            },
-            {
-                'name': 'Dennis',
-                'job': 'Bartender'
-            }
-        ],
+        characters: [] // mudamos o state para vazio, para nos aproximarmos do mundo real
+        // e tambem para adicionarmos novas pessoas atraves de um form
     };
 
     render() {
@@ -54,6 +48,9 @@ class App extends Component {
                     removeCharacter={this.removeCharacter} 
                     characterData={this.state.characters} 
                 /> 
+                <Form
+                    handleSubmit={this.handleSubmit}
+                />
 		    </div>
         );
     }

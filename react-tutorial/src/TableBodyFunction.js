@@ -23,10 +23,10 @@ export default TableBodyFunction;
 // uma table row com duas td. Esse map vai ficar contido em uma variável chamada rows.
 
 // OBS: É importante usar keys quando criarmos listas no react, já que ajuda a identificar cada item dela.
-// Props são um bom modo de passar dados existentes para um componente, porém, o componente não pode mudar o props,
-// eles são read-only.
+// Props são um bom modo de passar dados existentes para um componente, porém, 
+// o componente não pode mudar o props, eles são read only
 
 /*
-	É aqui que o index que definimos em removeCharacter aparece, no componente tableBodyFunction, iremos passar a key como
-	parametro para essa função, visando filtrar qual character queremos remover.
+É aqui que o index que definimos em removeCharacter aparece, no componente tableBodyFunction, 
+iremos passar a key como parametro para essa função, visando filtrar qual character queremos remover.
 */
